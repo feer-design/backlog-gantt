@@ -24,3 +24,124 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Print styles */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  body {
+    background: white !important;
+    font-size: 10px !important;
+  }
+
+  [data-print-hidden="true"] {
+    display: none !important;
+  }
+
+  header {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  .overflow-x-auto {
+    overflow: visible !important;
+  }
+
+  .shadow-lg, .shadow-sm {
+    box-shadow: none !important;
+  }
+
+  .min-h-screen {
+    min-height: auto !important;
+  }
+
+  .bg-gray-100 {
+    background: white !important;
+  }
+
+  .rounded-lg {
+    border-radius: 0 !important;
+  }
+
+  /* Task bars - ensure colors print */
+  .rounded-full {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Table borders for clarity */
+  .border-r, .border-b {
+    border-color: #d1d5db !important;
+  }
+
+  /* Ensure task row backgrounds print */
+  .bg-white, .bg-gray-50 {
+    background-color: white !important;
+  }
+
+  /* Grid lines visible */
+  .border-gray-100, .border-gray-200 {
+    border-color: #e5e7eb !important;
+  }
+
+  /* Make status colors print properly */
+  [style*="background-color"],
+  [style*="backgroundColor"] {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Task bar improvements */
+  .h-5.rounded {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+  }
+
+  /* Hide resize handles in print */
+  .cursor-ew-resize {
+    display: none !important;
+  }
+
+  /* Today line */
+  .bg-red-500, .bg-blue-500, .bg-green-500, .bg-yellow-500, .bg-orange-500 {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Cleaner grid */
+  .min-w-max {
+    min-width: 100% !important;
+  }
+
+  /* Make table cleaner */
+  .text-xs {
+    font-size: 9px !important;
+  }
+
+  .text-sm {
+    font-size: 10px !important;
+  }
+
+  /* Ensure borders are visible */
+  .border {
+    border-width: 1px !important;
+  }
+
+  /* Task list column */
+  .w-80 {
+    width: 200px !important;
+  }
+}
